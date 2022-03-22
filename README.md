@@ -7,5 +7,5 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-<h1 align="center">
-## Matakuliah PEMOGRAMAN WEB SERVICE 2022
+<h1 align="center" style="font-weight: 700;">
+Matakuliah PEMOGRAMAN WEB SERVICE 2022

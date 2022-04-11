@@ -20,3 +20,7 @@ Route::get('/', [Home::class, 'index']);
 Route::get('/biodata', [Home::class, 'biodata']);
 
 Route::get('soal', [SoalController::class, 'index']);
+
+Route::get('soal/tambah', [SoalController::class, 'tambah'])->name('soal.tambah');
+
+Route::post('soal/simpan', [SoalController::class, 'simpan'])->name('soal.simpan');

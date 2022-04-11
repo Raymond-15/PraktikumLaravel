@@ -1,16 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <img src="img/foto-01.png" width="30" height="30" alt="" loading="lazy" />
+      <img src="{{ asset('img/foto-01.png') }}" width="30" height="30" alt="" loading="lazy" />
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <div class="navbar-nav">
-        <a class="nav-link page-scroll" href="/">Home <span class="sr-only"></span></a>
-        <a class="nav-link page-scroll" href="biodata">Biodata</a>
-        <a class="nav-link page-scroll" href="soal">Soal</a>
+        <a class="nav-link page-scroll" href="{{ url('/') }}">Home <span class="sr-only"></span></a>
+        <a class="nav-link page-scroll" href="{{ url('biodata') }}">Biodata</a>
+        <a class="nav-link page-scroll" href="{{ url('soal') }}">Soal</a>
       </div>
     </div>
   </div>

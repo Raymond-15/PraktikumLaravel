@@ -12,4 +12,15 @@ class SoalController extends Controller
         $soal = Soal::all();
         return view('soal', compact('soal'));
     }
+
+    public function tambah()
+    {
+        return view('tambah');
+    }
+
+    public function simpan(Request $request)
+    {
+        Soal::create($request->all());
+        return redirect('soal');
+    }
 }

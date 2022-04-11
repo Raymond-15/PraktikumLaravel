@@ -23,7 +23,7 @@ $(window).on("load", function () {
     $(".hTengah").addClass("hMuncul");
 });
 
-$(window).scroll(function () {
+$(window).on("load", function () {
     // Parallax bergerak naik keatas jumbotron
     var wScroll = $(this).scrollTop();
 
@@ -40,11 +40,9 @@ $(window).scroll(function () {
         transform: "translate(0px, " + wScroll + "%)",
     });
 
-    if (wScroll > $(".biodata").offset().top - 300) {
-        $(".biodata .thumbnail").each(function (i) {
-            setTimeout(function () {
-                $(".biodata .thumbnail").eq(i).addClass("muncul");
-            }, 300 * i);
-        });
-    }
+    $(".biodata .thumbnail").each(function (i) {
+        setTimeout(function () {
+            $(".biodata .thumbnail").eq(i).addClass("muncul");
+        }, 300 * i);
+    });
 });

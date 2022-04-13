@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Soal extends Model
 {
+    use HasFactory;
+
     protected $fillable = ['namaMk', 'dosen', 'jumlah_soal', 'keterangan'];
 }

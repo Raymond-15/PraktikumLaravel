@@ -44,5 +44,7 @@ class SoalController extends Controller
     public function hapus($id)
     {
         $data = Soal::find($id);
+        $data->delete();
+        return redirect('soal');
     }
 }

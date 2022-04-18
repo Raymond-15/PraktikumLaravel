@@ -23,4 +23,15 @@ class SoalController extends Controller
         Soal::create($request->all());
         return redirect('soal');
     }
+
+    public function ubah($id)
+    {
+        $data = Soal::find($id);
+        return view('ubah', compact('data'));
+    }
+
+    public function hapus($id)
+    {
+        $data = Soal::find($id);
+    }
 }

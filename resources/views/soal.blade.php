@@ -16,6 +16,7 @@
                 <th scope="col">Dosen</th>
                 <th scope="col">Jumlah Soal</th>
                 <th scope="col">Keterangan</th>
+                <th scope="col">Aksi</th>
               </tr>
             </thead>
             <tbody>
@@ -26,6 +27,10 @@
                 <td>{{ $sl->dosen }}</td>
                 <td>{{ $sl->jumlah_soal }}</td>
                 <td>{{ $sl->keterangan }}</td>
+                <td>
+                  <a href="{{ url('soal/ubah/'. $sl->id) }}" type="button" class="btn btn-sm btn-warning">Ubah</a>
+                  <a href="{{ url('soal/hapus/'. $sl->id) }}" type="button" class="btn btn-sm btn-danger">Hapus</a>
+                </td>
               </tr>
               @endforeach
             </tbody>

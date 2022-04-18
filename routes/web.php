@@ -24,3 +24,7 @@ Route::get('soal', [SoalController::class, 'index']);
 Route::get('soal/tambah', [SoalController::class, 'tambah'])->name('soal.tambah');
 
 Route::post('soal/simpan', [SoalController::class, 'simpan'])->name('soal.simpan');
+
+Route::get('soal/ubah/{id}', [SoalController::class, 'ubah'])->name('soal.ubah');
+
+Route::get('soal/hapus/{id}', [SoalController::class, 'hapus'])->name('soal.ubah');

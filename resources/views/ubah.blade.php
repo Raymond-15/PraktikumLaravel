@@ -10,19 +10,19 @@
           @csrf
           <div class="form-group">
             <label for="namaMk">Mata Kuliah</label>
-            <input type="text" name="namaMk" class="form-control" id="namaMk" placeholder="Masukkan nama matakuliah">
+            <input type="text" name="namaMk" class="form-control" id="namaMk" value="{{ $data->namaMk }}">
           </div>
           <div class="form-group">
             <label for="dosen">Dosen</label>
-            <input type="text" name="dosen" class="form-control" id="dosen" placeholder="Nama dosen">
+            <input type="text" name="dosen" class="form-control" id="dosen" value="{{ $data->dosen }}">
           </div>
           <div class="form-group">
             <label for="jumlah_soal">Jumlah Soal</label>
-            <input type="number" name="jumlah_soal" class="form-control" id="jumlah_soal">
+            <input type="number" name="jumlah_soal" class="form-control" id="jumlah_soal" value="{{ $data->jumlah_soal }}">
           </div>
           <div class="form-group">
             <label for="keterangan">Keterangan</label>
-            <textarea type="text" name="keterangan" class="form-control" id="keterangan"></textarea>
+            <textarea name="keterangan" class="form-control" id="keterangan">{{ $data->keterangan }}</textarea>
           </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>

@@ -30,6 +30,17 @@ class SoalController extends Controller
         return view('ubah', compact('data'));
     }
 
+    public function perbaharui(Request $request)
+    {
+        $soal = Soal::find($request->id);
+        $soal->namaMk = $request->namaMk;
+        $soal->dosen = $request->dosen;
+        $soal->jumlah_soal = $request->jumlah_soal;
+        $soal->keterangan = $request->keterangan;
+        $soal->save();
+        return redirect('soal');
+    }
+
     public function hapus($id)
     {
         $data = Soal::find($id);

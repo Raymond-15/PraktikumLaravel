@@ -1,13 +1,14 @@
 @extends('layouts.main')
 
 @section('container')
-<section id="tambahSoal" class="mt-4">
+<section id="ubahSoal" class="mt-4">
   <div class="container">
     <div class="card">
-      <div class="card-header">Tambah Soal <a class="btn btn-sm btn-info float-right" href="{{ url('soal') }}">Kembali</a></div>
+      <div class="card-header">Ubah Soal <a class="btn btn-sm btn-info float-right" href="{{ url('soal') }}">Kembali</a></div>
       <div class="card-body">
-        <form action="{{ route('soal.simpan') }}" method="post">
+        <form action="{{ route('soal.perbaharui') }}" method="post">
           @csrf
+          <input type="hidden" name="id" value="{{ $data->id }}">
           <div class="form-group">
             <label for="namaMk">Mata Kuliah</label>
             <input type="text" name="namaMk" class="form-control" id="namaMk" value="{{ $data->namaMk }}">

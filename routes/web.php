@@ -29,4 +29,4 @@ Route::get('soal/ubah/{id}', [SoalController::class, 'ubah'])->name('soal.ubah')
 
 Route::post('soal/perbaharui', [SoalController::class, 'perbaharui'])->name('soal.perbaharui');
 
-Route::get('soal/hapus/{id}', [SoalController::class, 'hapus'])->name('soal.ubah');
+Route::get('soal/hapus/{id}', [SoalController::class, 'hapus'])->name('soal.hapus');

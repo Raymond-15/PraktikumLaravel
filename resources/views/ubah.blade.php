@@ -8,6 +8,7 @@
       <div class="card-body">
         <form action="{{ route('soal.perbaharui') }}" method="post">
           @csrf
+          @method('PATCH')
           <input type="hidden" name="id" value="{{ $data->id }}">
           <div class="form-group">
             <label for="namaMk">Mata Kuliah</label>

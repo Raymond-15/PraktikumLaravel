@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Home;
-use App\Http\Controllers\SoalController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SoalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,18 +17,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
 Route::get('/', [Home::class, 'index']);
 
 Route::get('/biodata', [Home::class, 'biodata']);
 
-Route::get('soal', [SoalController::class, 'index']);
+Route::group(['middleware' => 'auth'], function () {
 
-Route::get('soal/tambah', [SoalController::class, 'tambah'])->name('soal.tambah');
+  Route::get('soal', [SoalController::class, 'index']);
 
-Route::post('soal/simpan', [SoalController::class, 'simpan'])->name('soal.simpan');
+  Route::get('soal/tambah', [SoalController::class, 'tambah'])->name('soal.tambah');
 
-Route::get('soal/ubah/{id}', [SoalController::class, 'ubah'])->name('soal.ubah');
+  Route::post('soal/simpan', [SoalController::class, 'simpan'])->name('soal.simpan');
 
-Route::post('soal/perbaharui', [SoalController::class, 'perbaharui'])->name('soal.perbaharui');
+  Route::get('soal/ubah/{id}', [SoalController::class, 'ubah'])->name('soal.ubah');
 
-Route::get('soal/hapus/{id}', [SoalController::class, 'hapus'])->name('soal.hapus');
+  Route::post('soal/perbaharui', [SoalController::class, 'perbaharui'])->name('soal.perbaharui');
+
+  Route::get('soal/hapus/{id}', [SoalController::class, 'hapus'])->name('soal.hapus');
+});
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

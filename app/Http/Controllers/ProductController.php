@@ -49,9 +49,9 @@ class ProductController extends Controller
      */
     public function show($product)
     {
-        $data = Product::where('id', $product)->first();
+        $data = Product::with('categorie')->where('id', $product)->first();
         if (!empty($data)) {
-            return $data;
+            return response()->json($data);
         }
         return response()->json(['message' => 'Data tidak ditemukan'], 404);
     }

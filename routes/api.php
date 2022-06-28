@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CustomerController;
@@ -33,3 +34,15 @@ Route::get('/customer/{customer}', [CustomerController::class, 'show']);
 
 Route::get('/categorie', [CategorieController::class, 'index']);
 Route::get('/categorie/{categorie}', [CategorieController::class, 'show']);
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'auth'
+], function ($router) {
+
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
+    Route::post('wajib', 'AuthController@wajib');
+});

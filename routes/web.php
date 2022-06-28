@@ -17,7 +17,7 @@ use App\Http\Controllers\SoalController;
 |
 */
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/', [Home::class, 'index']);
 
